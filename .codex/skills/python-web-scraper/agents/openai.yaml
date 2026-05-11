@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Web Scraper"
+  short_description: "Help build Python web scraping workflows"
+  default_prompt: "Use $python-web-scraper to build or debug a Python scraping task."
