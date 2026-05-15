@@ -20,7 +20,7 @@ from .config import (
     SEARCH_URL,
     SESSION_STATE_PATH,
 )
-from .exporter import export_to_excel
+from .exporter import export_outputs
 from .models import JobRecord
 from .parser import extract_payload_job_rows, parse_job_card
 from .utils import sleep_with_jitter, unique_records
@@ -70,14 +70,20 @@ def run_crawl(
         failures.extend(city_failures)
 
     deduped_records = unique_records(all_records)
-    export_to_excel(deduped_records, output_path)
-    logger.info("Export finished with %s unique rows: %s", len(deduped_records), output_path)
+    output_files = export_outputs(deduped_records, output_path)
+    logger.info(
+        "Export finished with %s unique rows: excel=%s csv=%s",
+        len(deduped_records),
+        output_files["excel"],
+        output_files["csv"],
+    )
 
     return {
         "records": deduped_records,
         "summary": dict(summary),
         "failures": failures,
         "output_path": str(output_path),
+        "csv_output_path": str(output_files["csv"]),
     }
 
 

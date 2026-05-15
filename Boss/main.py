@@ -133,6 +133,7 @@ def main() -> None:
         playwright.stop()
 
     print(f"Output file: {result['output_path']}")
+    print(f"CSV file: {result['csv_output_path']}")
     print(f"Success: {result['summary'].get('success', 0)}")
     print(f"Skipped: {result['summary'].get('skipped', 0)}")
     print(f"Failed: {result['summary'].get('failed', 0)}")
