@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
-logs/
+logs/*
+!logs/boss_scraper.log
 output/*
 !output/boss_jobs.xlsx
 !output/boss_jobs.csv

@@ -1,0 +1,39 @@
+2026-05-15 20:47:41 | INFO | Start crawling city: 北京
+2026-05-15 20:47:41 | INFO | City 北京 keyword Python
+2026-05-15 20:47:41 | INFO | Open search page: https://www.zhipin.com/web/geek/jobs?query=Python&city=101010100&page=1
+2026-05-15 20:47:45 | WARNING | No usable rows on search page: city=北京 keyword=Python page=1
+2026-05-15 20:47:45 | INFO | City 北京 keyword 数据分析
+2026-05-15 20:47:45 | INFO | Open search page: https://www.zhipin.com/web/geek/jobs?query=%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90&city=101010100&page=1
+2026-05-15 20:47:49 | INFO | City 北京 keyword 数据分析 page 1 extracted 10 rows, source=https://www.zhipin.com/wapi/zpgeek/search/joblist.json?_=1778849265945
+2026-05-15 20:47:49 | INFO | Start crawling city: 上海
+2026-05-15 20:47:50 | INFO | City 上海 keyword Python
+2026-05-15 20:47:50 | INFO | Open search page: https://www.zhipin.com/web/geek/jobs?query=Python&city=101020100&page=1
+2026-05-15 20:47:54 | INFO | City 上海 keyword Python page 1 extracted 10 rows, source=https://www.zhipin.com/wapi/zpgeek/search/joblist.json?_=1778849271466
+2026-05-15 20:47:54 | INFO | Start crawling city: 深圳
+2026-05-15 20:47:54 | ERROR | City crawl failed for 深圳: BrowserContext.new_page: Protocol error (Target.createTarget): Failed to open a new tab
+Traceback (most recent call last):
+  File "D:\aiSpider\Boss\crawler.py", line 54, in run_crawl
+    city_records, city_summary, city_failures = crawl_city_jobs(
+                                                ^^^^^^^^^^^^^^^^
+  File "D:\aiSpider\Boss\crawler.py", line 92, in crawl_city_jobs
+    page = create_page(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\aiSpider\Boss\browser.py", line 98, in create_page
+    page = context.new_page()
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\wodeyingyong\python\Lib\site-packages\playwright\sync_api\_generated.py", line 12815, in new_page
+    return mapping.from_impl(self._sync(self._impl_obj.new_page()))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\wodeyingyong\python\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "D:\wodeyingyong\python\Lib\site-packages\playwright\_impl\_browser_context.py", line 335, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\wodeyingyong\python\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\wodeyingyong\python\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserContext.new_page: Protocol error (Target.createTarget): Failed to open a new tab
+2026-05-15 20:47:54 | INFO | Export finished with 20 unique rows: D:\aiSpider\Boss\output\boss_jobs.xlsx
