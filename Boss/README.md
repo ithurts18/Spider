@@ -33,10 +33,10 @@ python main.py --force-login
 
 ## 输出
 - Excel：`output/boss_jobs.xlsx`
+- CSV：[`output/boss_jobs.csv`](./output/boss_jobs.csv)
 - 登录状态：`state/boss_storage_state.json`
 - 日志：`logs/boss_scraper.log`
 
 ## 说明
 - 若出现登录、滑块或安全校验，请在浏览器中手动完成。
 - 第一版只做“列表页能拿就拿”的技能关键词，不进入详情页补抓。
-
