@@ -1,0 +1,2 @@
+"""Boss scraper package."""
+
