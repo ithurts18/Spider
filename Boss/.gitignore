@@ -5,4 +5,5 @@ logs/*
 output/*
 !output/boss_jobs.xlsx
 !output/boss_jobs.csv
-state/
+state/*
+!state/.gitkeep
